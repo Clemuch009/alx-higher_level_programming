@@ -1,9 +1,9 @@
-#!/usr/bin/python3
-import calculator_1
+#!/usr/bin/python
+from calculator_1 import add, sub, mul, div
 a = 10
 b = 5
-calculator_1.add(a,b)
-calculator_1.sub(a, b)
-calculator_1.mul(a,b)
-calculator_1.div(a,b)
 
+print(add(a,b))
+print(sub(a,b))
+print(mul(a,b))
+print(div(a,b))
