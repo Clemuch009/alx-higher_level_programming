@@ -1,0 +1,4 @@
+  File "/home/muchai/alx-higher_level_programming/0x08-python-more_classes/3-rectangle.py", line 65
+    print(('#' * self.__width) * ('#' * self.__height)
+         ^
+SyntaxError: '(' was never closed
