@@ -13,7 +13,7 @@ class BaseGeometry:
         """ validate value argument """
         if not isinstance(value, int):
             raise TypeError(f"{name} must be an integer")
-        if value < 0:
+        if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
 
 
@@ -32,4 +32,4 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """ returns the description of the rectangle """
-        return (f" [Rectangle] {self.__width}/{self.__height}")
+        return (f"[Rectangle] {self.__width}/{self.__height}")
