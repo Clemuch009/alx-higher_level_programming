@@ -16,18 +16,19 @@ class BaseGeometry:
         if value < 0:
             raise ValueError(f"{value} must be greater than 0")
 
+
 class Rectangle(BaseGeometry):
     """ class Rectangle that inherits from BaseGeometry """
-     def __init__(self, width, height):
-            """ initializes attributes """
-            integer_validator('width', width)
-            integer_validator('height', height)
-            self.__height = height
+    def __init__(self, width, height):
+        """ initializes attributes """
+        integer_validator('width', width)
+        integer_validator('height', height)
+        self.__height = height
 
     def area(self):
         """ returns the area """
         return self.__height * self.__width
-    
+
     def __str__(self):
         """ returns the description of the rectangle """
-        return (f" [Rectangle] {self.__height}/{self.__height")
+        return (f" [Rectangle] {self.__height}/{self.__height}")
