@@ -16,14 +16,15 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
 
+
 class Rectangle(BaseGeometry):
     """ class Rectangle that inherits from BaseGeometry """
-     def __init__(self, width, height):
-            """ initializes attributes """
-            self.integer_validator('width', width)
-            self.integer_validator('height', height)
-            self.__height = height
-            self.__width = width
+    def __init__(self, width, height):
+        """ initializes attributes """
+        self.integer_validator('width', width)
+        self.integer_validator('height', height)
+        self.__height = height
+        self.__width = width
 
     def area(self):
         """ returns the area """
@@ -31,13 +32,14 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """ returns the description of the rectangle """
-        return (f"[Rectangle] {self.__width}/{self.__height")
+        return (f"[Rectangle] {self.__width}/{self.__height}")
+
 
 class Square(Rectangle):
     """ create square class """
     def __init__(self, size):
         """ initialize attributes """
-        self.integer_validator('size' , size)
+        self.integer_validator('size', size)
         super().__init__(size, size)
         self.__size = size
 

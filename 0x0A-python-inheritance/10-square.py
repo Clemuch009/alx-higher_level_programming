@@ -18,11 +18,12 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     """ class Rectangle that inherits from BaseGeometry """
-     def __init__(self, width, height):
+    def __init__(self, width, height):
             """ initializes attributes """
             self.integer_validator('width', width)
             self.integer_validator('height', height)
             self.__height = height
+            self.__width = width
 
     def area(self):
         """ returns the area """
@@ -30,7 +31,8 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """ returns the description of the rectangle """
-        return (f" [Rectangle] {self.__width}/{self.__height")
+        return (f" [Rectangle] {self.__width}/{self.__height}")
+
 
 class Square(Rectangle):
     """ create square class """
