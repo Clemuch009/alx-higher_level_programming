@@ -1,0 +1,23 @@
+
+n () {
+  const target = 'https://hellosalut.stefanbohacek.dev/?lang=fr';
+  const proxy  = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(target);
+
+  $.get(proxy)
+    .done(function (data) {
+      // data might be a string that contains JSON-like content
+      try {
+        const parsed = (typeof data === 'string') ? JSON.parse(data) : data;
+        $('DIV#hello').text(parsed.hello);
+      } catch (e) {
+        // fallback: extract "hello" with regex if not pure JSON
+        const match = /"hello"\s*:\s*"([^"]+)"/.exec(data);
+        if (match) $('DIV#hello').text(match[1]);
+        else $('DIV#hello').text('Error parsing translation');
+      }
+    })
+    .fail(function () {
+      $('DIV#hello').text('Failed to load translation (proxy error)');
+    });
+});
+
